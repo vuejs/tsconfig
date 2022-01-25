@@ -19,6 +19,8 @@
     // For `<script setup>`
     // See <https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#preserve-value-imports>
     "preserveValueImports": true,
+    // Enforce using `import type` instead of `import` for types
+    "importsNotUsedAsValues": "error",
 
     // A few notes:
     // - Vue 3 supports ES2016+
