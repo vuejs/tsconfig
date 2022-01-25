@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["node"]
+
+    // We don't override `module` to `CommonJS` here.
+    // Because whatever build tool you use, we recommend you to author in ES modules.
+    // The recommendation may change when `"module": "Node12" / "NodeNext"` is stable.
+  }
+}
