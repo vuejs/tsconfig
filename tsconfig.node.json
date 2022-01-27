@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "lib": [],
     "types": ["node"]
 
     // We don't override `module` to `CommonJS` here.
