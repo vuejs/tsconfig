@@ -2,7 +2,7 @@
 
 TSConfigs for Vue projects to extend.
 
-Require TypeScript >= 4.5.
+Requires TypeScript >= 4.5.
 
 Install:
 
@@ -15,7 +15,7 @@ Add one of the available configurations to your `tsconfig.json`:
 The base configuration (runtime-agnostic):
 
 ```json
-"extends": "@vue/tsconfig"
+"extends": "@vue/tsconfig/tsconfig.json"
 ```
 
 Configuration for Browser environment:
