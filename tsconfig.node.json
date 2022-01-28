@@ -5,7 +5,13 @@
     "types": ["node"]
 
     // We don't override `module` to `CommonJS` here.
-    // Because whatever build tool you use, we recommend you to author in ES modules.
+    // Whatever build tool you use, we recommend you to author and ship in ES modules.
     // The recommendation may change when `"module": "Node12" / "NodeNext"` is stable.
+
+    // If you are targeting CommonJS environment,
+    // and use `tsc` or `ts-node` for transpilation,
+    // you might need to manually override the following fields:
+    // "module": "CommonJS",
+    // "preserveValueImports": false,
   }
 }
