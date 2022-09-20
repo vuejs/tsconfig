@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/vuejs/tsconfig#readme",
   "peerDependencies": {
-    "@types/node": "*"
+    "@types/node": "*",
+    "typescript": "^4.5.0"
   },
   "peerDependenciesMeta": {
     "@types/node": {
