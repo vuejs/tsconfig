@@ -2,7 +2,7 @@
 
 TSConfigs for Vue projects to extend.
 
-Requires TypeScript >= 4.5.
+Requires TypeScript >= 5.
 
 Install:
 
