@@ -14,8 +14,6 @@
     "noImplicitThis": true,
     "strict": true,
 
-    // Required in Vite
-    "isolatedModules": true,
     // Enforce using `import type` instead of `import` for types
     "verbatimModuleSyntax": true,
 
