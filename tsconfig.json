@@ -1,12 +1,19 @@
 {
   "compilerOptions": {
+    // As long as you are using a build tool, we recommend you to author and ship in ES modules.
+    // Even if you are targeting Node.js, because
+    //  - `CommonJS` is too outdated
+    //  - the ecosystem hasn't fully caught up with `Node16`/`NodeNext`
     "module": "ESNext",
-    "moduleResolution": "Node",
+
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
     "useDefineForClassFields": true,
 
     // Required in Vue projects
     "jsx": "preserve",
+    // TODO: add `jsxImportSource` when Vue 3.3 is released
 
     // `"noImplicitThis": true` is part of `strict`
     // Added again here in case some users decide to disable `strict`.
@@ -16,11 +23,11 @@
 
     // Required in Vite
     "isolatedModules": true,
-    // For `<script setup>`
-    // See <https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#preserve-value-imports>
-    "preserveValueImports": true,
-    // Enforce using `import type` instead of `import` for types
-    "importsNotUsedAsValues": "error",
+
+    // https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#verbatimmodulesyntax
+    // Any imports or exports without a type modifier are left around. This is important for `<script setup>`.
+    // Anything that uses the type modifier is dropped entirely.
+    "verbatimModuleSyntax": true,
 
     // A few notes:
     // - Vue 3 supports ES2016+
