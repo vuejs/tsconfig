@@ -27,7 +27,7 @@ Add one of the available configurations to your `tsconfig.json`:
 ```json
 "extends": [
   "@vue/tsconfig",
-  "@vue/tsconfig/tsconfig.web.json"
+  "@vue/tsconfig/tsconfig.dom.json"
 ]
 ```
 
@@ -56,12 +56,12 @@ Make sure to place `@vue/tsconfig` *after* `@tsconfig/node18` so that it takes p
 ## Migrating from TypeScipt < 5.0
 
 - The usage of base `tsconfig.json` is unchanged.
-- `tsconfig.web.json` now only contains web-specific options, you need to use it in conjunction with the base `tsconfig.json`:
+- `tsconfig.web.json` is now renamed to `tsconfig.dom.json`, to align with `@vue/runtime-dom` and `@vue/compiler-dom`, and it only contains dom-specific options, you need to use it in conjunction with the base `tsconfig.json`:
 
   ```json
   "extends": [
     "@vue/tsconfig",
-    "@vue/tsconfig/tsconfig.web.json"
+    "@vue/tsconfig/tsconfig.dom.json"
   ]
   ```
 
@@ -69,7 +69,7 @@ Make sure to place `@vue/tsconfig` *after* `@tsconfig/node18` so that it takes p
 
 Some configurations have been updated, which might affect your projects:
 
-- `moduleResolution` changed from `node` to `bundler`
+- `moduleResolution` changed from `node` to [`bundler`](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#moduleresolution-bundler)
 - The `lib` option in `tsconfig.web.json` now includes `ES2020` by default.
   - Previously it was ES2016, which was the lowest ES version that Vue 3 supports.
   - Vite 4 transpiles down to ES2020 by default, this new default is to align with the build tool.
@@ -77,7 +77,10 @@ Some configurations have been updated, which might affect your projects:
 
     ```json
     {
-      "extends": "@vue/tsconfig/tsconfig.web.json",
+      "extends": [
+        "@vue/tsconfig",
+        "@vue/tsconfig/tsconfig.dom.json"
+      ],
       "compilerOptions": {
         "lib": ["ES2016", "DOM", "DOM.Iterable"]
       }
