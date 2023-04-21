@@ -4,6 +4,7 @@
     // Even if you are targeting Node.js, because
     //  - `CommonJS` is too outdated
     //  - the ecosystem hasn't fully caught up with `Node16`/`NodeNext`
+    // This recommendation includes environments like Vitest, Vite Config File, Vite SSR, etc.
     "module": "ESNext",
 
     "moduleResolution": "bundler",
@@ -13,7 +14,6 @@
 
     // Required in Vue projects
     "jsx": "preserve",
-    // TODO: add `jsxImportSource` when Vue 3.3 is released
 
     // `"noImplicitThis": true` is part of `strict`
     // Added again here in case some users decide to disable `strict`.
@@ -24,7 +24,7 @@
     // Required in Vite
     "isolatedModules": true,
 
-    // https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#verbatimmodulesyntax
+    // <https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#verbatimmodulesyntax>
     // Any imports or exports without a type modifier are left around. This is important for `<script setup>`.
     // Anything that uses the type modifier is dropped entirely.
     "verbatimModuleSyntax": true,
