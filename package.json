@@ -20,14 +20,6 @@
     "url": "https://github.com/vuejs/tsconfig/issues"
   },
   "homepage": "https://github.com/vuejs/tsconfig#readme",
-  "peerDependencies": {
-    "@types/node": "*"
-  },
-  "peerDependenciesMeta": {
-    "@types/node": {
-      "optional": true
-    }
-  },
   "publishConfig": {
     "access": "public"
   }
