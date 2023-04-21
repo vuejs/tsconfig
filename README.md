@@ -2,9 +2,9 @@
 
 TSConfigs for Vue projects to extend.
 
-Requires TypeScript >= 5.0.
+Requires TypeScript >= 5.0. For TypeScript v4.5 to v4.9, please use [v0.1.x](https://www.npmjs.com/package/@vue/tsconfig/v/0.1.3).
 
-For TypeScript v4.5 to v4.9, please use [v0.1.x](https://www.npmjs.com/package/@vue/tsconfig/v/0.1.3). [See below for the changes in v0.2.x.](#migrating-from-typescript--50)
+[See below for the changes in v0.2.x.](#migrating-from-typescript--50)
 
 ## Installation
 
@@ -53,7 +53,7 @@ Then extend the Node.js tsconfig and the Vue tsconfig in your `tsconfig.json`:
 
 Make sure to place `@vue/tsconfig` *after* `@tsconfig/node18` so that it takes precedence.
 
-## Migrating from TypeScipt < 5.0
+## Migrating from TypeScript < 5.0
 
 - The usage of base `tsconfig.json` is unchanged.
 - `tsconfig.web.json` is now renamed to `tsconfig.dom.json`, to align with `@vue/runtime-dom` and `@vue/compiler-dom`, and it only contains dom-specific options, you need to use it in conjunction with the base `tsconfig.json`:
