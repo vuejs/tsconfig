@@ -70,7 +70,7 @@ Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node18/tscon
 Some configurations have been updated, which might affect your projects:
 
 - `moduleResolution` changed from `node` to [`bundler`](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#moduleresolution-bundler)
-- The `lib` option in `tsconfig.web.json` now includes `ES2020` by default.
+- The `lib` option in `tsconfig.dom.json` now includes `ES2020` by default.
   - Previously it was ES2016, which was the lowest ES version that Vue 3 supports.
   - Vite 4 transpiles down to ES2020 by default, this new default is to align with the build tool.
   - This change won't throw any new errors on your existing code, but if you are targeting old browsers and want TypeScript to throw errors on newer features used, you can override the `lib` option in your `tsconfig.json`:
