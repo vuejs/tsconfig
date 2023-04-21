@@ -19,14 +19,14 @@ Add one of the available configurations to your `tsconfig.json`:
 ### The Base Configuration (Runtime-agnostic)
 
 ```json
-"extends": "@vue/tsconfig"
+"extends": "@vue/tsconfig/tsconfig.json"
 ```
 
 ### Configuration for Browser Environment
 
 ```json
 "extends": [
-  "@vue/tsconfig",
+  "@vue/tsconfig/tsconfig.json",
   "@vue/tsconfig/tsconfig.dom.json"
 ]
 ```
@@ -44,14 +44,14 @@ Then extend the Node.js tsconfig and the Vue tsconfig in your `tsconfig.json`:
 ```json
 "extends": [
   "@tsconfig/node18/tsconfig.json",
-  "@vue/tsconfig"
+  "@vue/tsconfig/tsconfig.json"
 ],
 "compilerOptions": [
   "types": ["node"]
 ]
 ```
 
-Make sure to place `@vue/tsconfig` *after* `@tsconfig/node18` so that it takes precedence.
+Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node18/tsconfig.json` so that it takes precedence.
 
 ## Migrating from TypeScript < 5.0
 
@@ -60,7 +60,7 @@ Make sure to place `@vue/tsconfig` *after* `@tsconfig/node18` so that it takes p
 
   ```json
   "extends": [
-    "@vue/tsconfig",
+    "@vue/tsconfig/tsconfig.json",
     "@vue/tsconfig/tsconfig.dom.json"
   ]
   ```
@@ -78,7 +78,7 @@ Some configurations have been updated, which might affect your projects:
     ```json
     {
       "extends": [
-        "@vue/tsconfig",
+        "@vue/tsconfig/tsconfig.json",
         "@vue/tsconfig/tsconfig.dom.json"
       ],
       "compilerOptions": {
