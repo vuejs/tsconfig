@@ -25,10 +25,7 @@ Add one of the available configurations to your `tsconfig.json`:
 ### Configuration for Browser Environment
 
 ```json
-"extends": [
-  "@vue/tsconfig/tsconfig.json",
-  "@vue/tsconfig/tsconfig.dom.json"
-]
+"extends": "@vue/tsconfig/tsconfig.dom.json"
 ```
 
 ### Configuration for Node Environments
@@ -56,31 +53,20 @@ Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node18/tscon
 ## Migrating from TypeScript < 5.0
 
 - The usage of base `tsconfig.json` is unchanged.
-- `tsconfig.web.json` is now renamed to `tsconfig.dom.json`, to align with `@vue/runtime-dom` and `@vue/compiler-dom`, and it only contains dom-specific options, you need to use it in conjunction with the base `tsconfig.json`:
-
-  ```json
-  "extends": [
-    "@vue/tsconfig/tsconfig.json",
-    "@vue/tsconfig/tsconfig.dom.json"
-  ]
-  ```
-
+- `tsconfig.web.json` is now renamed to `tsconfig.dom.json`, to align with `@vue/runtime-dom` and `@vue/compiler-dom`.
 - `tsconfig.node.json` is removed, please read the [Node.js section](#configuration-for-node-environments) above for Node.js usage.
 
 Some configurations have been updated, which might affect your projects:
 
 - `moduleResolution` changed from `node` to [`bundler`](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#moduleresolution-bundler)
-- The `lib` option in `tsconfig.dom.json` now includes `ES2020` by default.
+- The `lib` option in `tsconfig.dom .json` now includes `ES2020` by default.
   - Previously it was ES2016, which was the lowest ES version that Vue 3 supports.
   - Vite 4 transpiles down to ES2020 by default, this new default is to align with the build tool.
   - This change won't throw any new errors on your existing code, but if you are targeting old browsers and want TypeScript to throw errors on newer features used, you can override the `lib` option in your `tsconfig.json`:
 
     ```json
     {
-      "extends": [
-        "@vue/tsconfig/tsconfig.json",
-        "@vue/tsconfig/tsconfig.dom.json"
-      ],
+      "extends": "@vue/tsconfig/tsconfig.dom.json",
       "compilerOptions": {
         "lib": ["ES2016", "DOM", "DOM.Iterable"]
       }
