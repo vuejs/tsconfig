@@ -13,6 +13,9 @@
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
 
+    // `allowImportingTsExtensions` can only be used when `noEmit` or `emitDeclarationOnly` is set.
+    "noEmit": true,
+
     // Required in Vue projects
     "jsx": "preserve",
 
