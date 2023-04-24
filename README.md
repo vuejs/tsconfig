@@ -36,7 +36,16 @@ First install the base tsconfig and types for the Node.js version you are target
 npm add -D @tsconfig/node18 @types/node@18
 ```
 
-Then extend the Node.js tsconfig and the Vue tsconfig in your `tsconfig.json`:
+If you are not using any bundlers, the Node.js code doesn't rely on any Vue/Vite-specific features, then these would be enough, you may not need to extend the Vue TSConfig:
+
+```json
+"extends": "@tsconfig/node18/tsconfig.json",
+"compilerOptions": [
+  "types": ["node"]
+]
+```
+
+Otherwise, if you are trying to use Vue components in Node.js environments (e.g. Server Side Rendering, Vitest, etc.), you will need to extend the Vue TSConfig along with the Node.js TSConfig:
 
 ```json
 "extends": [
