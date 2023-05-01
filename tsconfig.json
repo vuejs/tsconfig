@@ -26,9 +26,6 @@
     "noImplicitThis": true,
     "strict": true,
 
-    // Required in Vite
-    "isolatedModules": true,
-
     // <https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#verbatimmodulesyntax>
     // Any imports or exports without a type modifier are left around. This is important for `<script setup>`.
     // Anything that uses the type modifier is dropped entirely.
@@ -51,6 +48,6 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     // See <https://github.com/vuejs/vue-cli/pull/5688>
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }
