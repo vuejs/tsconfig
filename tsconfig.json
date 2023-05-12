@@ -19,6 +19,7 @@
 
     // Required in Vue projects
     "jsx": "preserve",
+    "jsxImportSource": "vue",
 
     // `"noImplicitThis": true` is part of `strict`
     // Added again here in case some users decide to disable `strict`.
