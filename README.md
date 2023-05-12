@@ -40,9 +40,9 @@ If you are not using any bundlers, the Node.js code doesn't rely on any Vue/Vite
 
 ```json
 "extends": "@tsconfig/node18/tsconfig.json",
-"compilerOptions": [
+"compilerOptions": {
   "types": ["node"]
-]
+}
 ```
 
 Otherwise, if you are trying to use Vue components in Node.js environments (e.g. Server Side Rendering, Vitest, etc.), you will need to extend the Vue TSConfig along with the Node.js TSConfig:
@@ -52,9 +52,9 @@ Otherwise, if you are trying to use Vue components in Node.js environments (e.g.
   "@tsconfig/node18/tsconfig.json",
   "@vue/tsconfig/tsconfig.json"
 ],
-"compilerOptions": [
+"compilerOptions": {
   "types": ["node"]
-]
+}
 ```
 
 Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node18/tsconfig.json` so that it takes precedence.
