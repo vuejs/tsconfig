@@ -1,5 +1,16 @@
 {
   "compilerOptions": {
+    // Most non-library projects don't need to emit declarations.
+    // So we add this option by default to make the config more friendly to most users.
+    "noEmit": true,
+    // When type-checking with solution-style tsconfigs, though with `noEmit: true`, there won't
+    // be any `.d.ts` files emitted, but tsc still writes a `.tsbuildinfo` file to the `outDir`
+    // for each project. If we don't explicitly set the `outDir`, it will be in the same folder
+    // as the `tsconfig.json` file, which would look messy.
+    // Setting it to `./dist/` isn't ideal either, because it would pollute the `dist` folder.
+    // So we set it to a hidden folder in `node_modules` to avoid polluting the project root.
+    "outDir": "./node_modules/.cache/vue-tsbuildinfo",
+
     // As long as you are using a build tool, we recommend you to author and ship in ES modules.
     // Even if you are targeting Node.js, because
     //  - `CommonJS` is too outdated
