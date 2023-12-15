@@ -59,6 +59,24 @@ Otherwise, if you are trying to use Vue components in Node.js environments (e.g.
 
 Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node18/tsconfig.json` so that it takes precedence.
 
+## "Solution Style" TSConfigs
+
+If you are using ["solution style" tsconfigs](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#support-for-solution-style-tsconfigjson-files), it is a bit tricky to use `vue-tsc` to type-check all the files in the project:
+
+1. The type-checking command must be `vue-tsc --build --force`;
+2. You will need to add `"noEmit": true` to all sub-project tsconfigs;
+3. There will be temporary `*.tsbuildinfor` files emitted alongside all the tsconfig files.
+
+To mitigate the latter two issues, we've provided a `tsconfig.no-emit.json` for you to extend. It sets `"noEmit": true` and points the output directory of the `*.tsbuildinfo` files to a temporary directory. You can extend this config in all your sub-projects:
+
+```json
+{
+  "extends": ["@vue/tsconfig/tsconfig.dom.json", "@vue/tsconfig/tsconfig.no-emit.json"]
+}
+```
+
+Then you can run `vue-tsc --build --force` in the root project to type-check all the files in the project.
+
 ## Migrating from TypeScript < 5.0
 
 - The usage of base `tsconfig.json` is unchanged.
