@@ -59,6 +59,17 @@ Otherwise, if you are trying to use Vue components in Node.js environments (e.g.
 
 Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node18/tsconfig.json` so that it takes precedence.
 
+## Emitting Declaration Files
+
+As most Vue projects are built with bundlers, the default Vue TSConfig does not emit declaration files. If you are building a library or a component library, you can enable declaration file emitting by also extending `@vue/tsconfig/tsconfig.lib.json` in your `tsconfig.json`:
+
+```json
+"extends": [
+  "@vue/tsconfig/tsconfig.dom.json",
+  "@vue/tsconfig/tsconfig.lib.json"
+]
+```
+
 ## Migrating from TypeScript < 5.0
 
 - The usage of base `tsconfig.json` is unchanged.
