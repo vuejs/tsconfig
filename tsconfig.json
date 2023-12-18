@@ -9,7 +9,10 @@
     // as the `tsconfig.json` file, which would look messy.
     // Setting it to `./dist/` isn't ideal either, because it would pollute the `dist` folder.
     // So we set it to a hidden folder in `node_modules` to avoid polluting the project root.
-    "outDir": "./node_modules/.cache/vue-tsbuildinfo",
+    // FIXME:
+    // This caused a regression: https://github.com/vuejs/tsconfig/issues/27
+    // Need to find a better solution.
+    // "outDir": "./node_modules/.cache/vue-tsbuildinfo",
 
     // As long as you are using a build tool, we recommend you to author and ship in ES modules.
     // Even if you are targeting Node.js, because
