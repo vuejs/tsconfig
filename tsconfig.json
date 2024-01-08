@@ -54,7 +54,7 @@
     //   at least `ES2020` for dynamic `import()`s and `import.meta` to work correctly.
     // - If you are not using Vite, feel free to overwrite the `target` field.
     "target": "ESNext",
-    // For spec compilance.
+    // For spec compliance.
     // `true` by default if the `target` is `ES2020` or higher.
     // Explicitly set it to `true` here in case some users want to overwrite the `target`.
     "useDefineForClassFields": true,
