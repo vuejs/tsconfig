@@ -47,7 +47,7 @@
     "verbatimModuleSyntax": true,
 
     // A few notes:
-    // - Vue 3 supports ES2016+
+    // - Vue 3 supports ES2015+
     // - For Vite, the actual compilation target is determined by the
     //   `build.target` option in the Vite config.
     //   So don't change the `target` field here. It has to be
