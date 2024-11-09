@@ -33,13 +33,13 @@ Add one of the available configurations to your `tsconfig.json`:
 First install the base tsconfig and types for the Node.js version you are targeting, for example:
 
 ```sh
-npm add -D @tsconfig/node18 @types/node@18
+npm add -D @tsconfig/node22 @types/node@22
 ```
 
 If you are not using any bundlers, the Node.js code doesn't rely on any Vue/Vite-specific features, then these would be enough, you may not need to extend the Vue TSConfig:
 
 ```json
-"extends": "@tsconfig/node18/tsconfig.json",
+"extends": "@tsconfig/node22/tsconfig.json",
 "compilerOptions": {
   "types": ["node"]
 }
@@ -49,7 +49,7 @@ Otherwise, if you are trying to use Vue components in Node.js environments (e.g.
 
 ```json
 "extends": [
-  "@tsconfig/node18/tsconfig.json",
+  "@tsconfig/node22/tsconfig.json",
   "@vue/tsconfig/tsconfig.json"
 ],
 "compilerOptions": {
@@ -57,7 +57,7 @@ Otherwise, if you are trying to use Vue components in Node.js environments (e.g.
 }
 ```
 
-Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node18/tsconfig.json` so that it takes precedence.
+Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node22/tsconfig.json` so that it takes precedence.
 
 ## Emitting Declaration Files
 
