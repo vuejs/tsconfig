@@ -24,6 +24,15 @@
     "access": "public"
   },
   "peerDependencies": {
-    "typescript": "5.x"
+    "typescript": "5.x",
+    "vue": "^3.3.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
   }
 }

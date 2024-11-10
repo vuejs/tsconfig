@@ -3,6 +3,7 @@
 TSConfigs for Vue projects to extend.
 
 Requires TypeScript >= 5.0. For TypeScript v4.5 to v4.9, please use [v0.1.x](https://www.npmjs.com/package/@vue/tsconfig/v/0.1.3).
+Requires Vue.js >= 3.3.
 
 [See below for the breaking changes in v0.3.x.](#migrating-from-typescript--50)
 
