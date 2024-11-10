@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/vuejs/tsconfig#readme",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "peerDependencies": {
     "typescript": "5.x",
