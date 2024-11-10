@@ -15,11 +15,7 @@
     // So here we enable some resolution features that are only available in bundlers.
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    // `allowImportingTsExtensions` can only be used when `noEmit` or `emitDeclarationOnly` is set.
-    // But `noEmit` may cause problems with solution-style tsconfigs:
-    // <https://github.com/microsoft/TypeScript/issues/49844>
-    // And `emitDeclarationOnly` is not always wanted.
-    // Considering it's not likely to be commonly used in Vue codebases, we don't enable it here.
+    "allowImportingTsExtensions": true,
 
     // Required in Vue projects
     "jsx": "preserve",
