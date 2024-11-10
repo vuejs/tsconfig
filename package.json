@@ -22,5 +22,8 @@
   "homepage": "https://github.com/vuejs/tsconfig#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "typescript": "5.x"
   }
 }
