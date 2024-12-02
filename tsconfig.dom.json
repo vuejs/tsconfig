@@ -16,7 +16,8 @@
       // No `ScriptHost` because Vue 3 dropped support for IE
     ],
 
-    // Set to empty to avoid accidental inclusion of unwanted types
+    // Set to empty to avoid accidental inclusion of unwanted types,
+    // e.g. the Node.js types that would pollute the global scope.
     "types": []
   }
 }
