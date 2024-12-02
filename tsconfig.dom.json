@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": [
       // Target ES2020 to align with Vite.
-      // <https://vitejs.dev/config/build-options.html#build-target>
+      // <https://vite.dev/config/build-options.html#build-target>
       // Support for newer versions of language built-ins are
       // left for the users to include, because that would require:
       //   - either the project doesn't need to support older versions of browsers;
