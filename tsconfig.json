@@ -13,7 +13,7 @@
 
     // We expect users to use bundlers.
     // So here we enable some resolution features that are only available in bundlers.
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     // Even files without `import` or `export` are treated as modules.
