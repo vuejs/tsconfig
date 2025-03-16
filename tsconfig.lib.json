@@ -8,6 +8,8 @@
     // Libraries generally require more strict type accuracy.
     // For example, its types must be compatible with the Vue types.
     // So we don't want to skip the type checking of its dependencies.
-    "skipLibCheck": false
+    "skipLibCheck": false,
+
+    "noUncheckedIndexedAccess": true
   }
 }
