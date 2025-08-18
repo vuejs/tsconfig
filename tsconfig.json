@@ -34,7 +34,9 @@
     // See <https://www.semver-ts.org/formal-spec/5-compiler-considerations.html#strictness>
     // These 2 options are also part of the recommended tsconfig as of TS 5.9
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
+    // Commented out for now. It's hard to land in the current ecosystem.
+    // Needs more consensus before moving forward.
+    // "exactOptionalPropertyTypes": true,
 
     // <https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#verbatimmodulesyntax>
     // Any imports or exports without a type modifier are left around. This is important for `<script setup>`.
