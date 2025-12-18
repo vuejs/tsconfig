@@ -34,13 +34,13 @@ Add one of the available configurations to your `tsconfig.json`:
 First install the base tsconfig and types for the Node.js version you are targeting, for example:
 
 ```sh
-npm add -D @tsconfig/node22 @types/node@22
+npm add -D @tsconfig/node24 @types/node@24
 ```
 
 If you are not using any bundlers, the Node.js code doesn't rely on any Vue/Vite-specific features, then these would be enough, you may not need to extend the Vue TSConfig:
 
 ```json
-"extends": "@tsconfig/node22/tsconfig.json",
+"extends": "@tsconfig/node24/tsconfig.json",
 "compilerOptions": {
   "types": ["node"]
 }
@@ -50,7 +50,7 @@ Otherwise, if you are trying to use Vue components in Node.js environments (e.g.
 
 ```json
 "extends": [
-  "@tsconfig/node22/tsconfig.json",
+  "@tsconfig/node24/tsconfig.json",
   "@vue/tsconfig/tsconfig.json"
 ],
 "compilerOptions": {
@@ -58,7 +58,7 @@ Otherwise, if you are trying to use Vue components in Node.js environments (e.g.
 }
 ```
 
-Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node22/tsconfig.json` so that it takes precedence.
+Make sure to place `@vue/tsconfig/tsconfig.json` *after* `@tsconfig/node24/tsconfig.json` so that it takes precedence.
 
 ## Emitting Declaration Files
 
@@ -86,9 +86,9 @@ Some configurations have been updated, which might affect your projects:
     - While `vue-i18n` [has fixed this issue in v9.3 beta](https://github.com/intlify/vue-i18n-next/issues/1327#issuecomment-1539491735), and vuetify [will solve the issue in v3.3](https://github.com/vuetifyjs/vuetify/commit/5e08832fabe80ddc839907d13c7279a091ddfee5), other packages may not be so quick to fix. In that case, you can override the `compilerOptions.resolvePackageJsonExports` option to `false` in your `tsconfig.json` to temporarily work around the issue.
     - But we encourage you to submit PRs to these packages to fix the bugs, so that we can all move forward to the new resolution mode. You can use tools like [`publint`](https://publint.dev/) and [Are the types wrong?](https://arethetypeswrong.github.io/) to help you find and debug the issues.
   - Another small breaking change is that `--moduleResolution bundler` does not support resolution of `require` calls. In TypeScript files, this means the `import mod = require("foo”)` syntax is forbidden.
-- The `lib` option in `tsconfig.dom.json` now includes `ES2020` by default.
+- The `lib` option in `tsconfig.dom.json` now includes `ES2022` by default.
   - Previously it was ES2016, which was the lowest ES version that Vue 3 supports.
-  - Vite 4 transpiles down to ES2020 by default, this new default is to align with the build tool.
+  - Vite 4 transpiles down to ES2020 by default, and Vite 7 transpiles down to baseline. The defaults are to align with the build tool.
   - This change won't throw any new errors on your existing code, but if you are targeting old browsers and want TypeScript to throw errors on newer features used, you can override the `lib` option in your `tsconfig.json`:
 
     ```json
