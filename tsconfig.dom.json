@@ -18,6 +18,7 @@
 
     // Set to empty to avoid accidental inclusion of unwanted types,
     // e.g. the Node.js types that would pollute the global scope.
+    // It's the default value in TS 6+, too.
     "types": []
   }
 }
