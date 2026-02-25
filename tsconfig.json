@@ -29,6 +29,7 @@
     // Added again here in case some users decide to disable `strict`.
     // This enables stricter inference for data properties on `this`.
     "noImplicitThis": true,
+    // Strict mode is on by default in TS 6+
     "strict": true,
 
     // See <https://www.semver-ts.org/formal-spec/5-compiler-considerations.html#strictness>
